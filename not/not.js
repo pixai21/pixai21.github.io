@@ -1,6 +1,7 @@
+var ww;
 onload = () => {
   try {
-    const ww = new Worker('noti.js');
+    ww = new Worker('noti.js');
   } catch (er) {
     alert(er);
   }
