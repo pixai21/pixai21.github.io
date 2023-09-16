@@ -1,11 +1,14 @@
 var ww;
 onload = () => {
-  try {
-    ww = new Worker('noti.js');
-  } catch (er) {
-    alert(er);
-  }
   document.onclick = () => {
-    ww.postMessage('ごみまじ');
+    try {
+      ww = new Worker('noti.js');
+      ww.onmessage = wm => {
+        alert(wm);
+      }
+      ww.postMessage('ごみまじ');
+    } catch (er) {
+      alert(er);
+    }
   }
 }
