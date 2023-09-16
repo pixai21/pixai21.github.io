@@ -5,7 +5,6 @@ onload = () => {
     alert(er);
   }
   document.onclick = () => {
-    alert('b');
     ww.postMessage('ごみまじ');
   }
 }
