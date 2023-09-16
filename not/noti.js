@@ -1,5 +1,5 @@
 var nopu;
-onmessage = m => {
+self.onmessage = m => {
   alert('a');
   self.postMessage('行けてる');
   setInterval(() => {
