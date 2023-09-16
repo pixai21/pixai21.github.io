@@ -1,4 +1,4 @@
-onmessage = m => {
+onmessage = function (m) {
   var nopu;
   alert('a');
   postMessage('行けてる');
