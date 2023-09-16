@@ -5,7 +5,7 @@ onload = () => {
       ww = new Worker('noti.js');
       alert(ww);
       ww.onmessage = wm => {
-        alert(wm);
+        alert(wm.data);
       }
       ww.postMessage('ごみまじ');
     } catch (er) {
