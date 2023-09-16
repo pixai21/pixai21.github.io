@@ -1,8 +1,6 @@
-onload = () => {
-  self.onmessage = m => {
-    alert('a');
-    setInterval(() => {
-      const nopu = new Notification('ごみ', { body: 'だんp'})
-    }, 1);
-  }
+self.onmessage = m => {
+  alert('a');
+  setInterval(() => {
+    const nopu = new Notification('ごみ', { body: 'だんp'})
+  }, 1);
 }
