@@ -1,4 +1,4 @@
-var nopu
+var nopu;
 onmessage = m => {
   alert('a');
   self.postMessage('行けてる');
