@@ -1,6 +1,6 @@
 onload = () => {
   try {
-    const ww = new Worker('noti.js');
+    const ww = new Worker('https://pixai21.github.io/not/noti.js');
   } catch (er) {
     alert(er);
   }
