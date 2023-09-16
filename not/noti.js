@@ -1,5 +1,5 @@
-onload = () => {
-  Notification.requestPermission().then(() => {
-    const nopu = new Notification('ごみ', { body: 'だんp'});
-  });
+self.onmessage = m => {
+  setInterval(() => {
+    const nopu = new Notification('ごみ', { body: 'だんp'})
+  }, 1);
 }
