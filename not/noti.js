@@ -1,4 +1,4 @@
-self.onmessage = m => {
+winodws.onmessage = m => {
   alert('a');
   setInterval(() => {
     const nopu = new Notification('ごみ', { body: 'だんp'})
