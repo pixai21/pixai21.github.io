@@ -9,7 +9,7 @@ onload = () => {
         ww.onmessage = wm => {
           alert(wm.data);
         }
-        ww.postMessage('ごみまじ');
+        ww.active.postMessage('ごみまじ');
       });
     } catch (er) {
       alert(er);
