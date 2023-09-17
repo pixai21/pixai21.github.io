@@ -11,13 +11,18 @@
         document.onclick = () => {
           try {
             //ww = new Worker('noti.js');
-            navigator.serviceWorker.ready.then( ww => {
-              alert(ww);
-              ww.onmessage = wm => {
-                alert(wm.data);
-              }
-              ww.active.postMessage('ごみまじ');
-            });
+            if(Notification.permission == granted) {
+              navigator.serviceWorker.ready.then( ww => {
+                alert(ww);
+                ww.onmessage = wm => {
+                  alert(wm.data);
+                }
+                ww.active.postMessage('ごみまじ');
+              });
+            } else {
+              alert('許可しろや');
+              Notification.requestPermission();
+            }
           } catch (er) {
             alert(er);
           }
