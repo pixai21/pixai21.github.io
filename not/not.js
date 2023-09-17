@@ -1,9 +1,9 @@
 //var ww;
 onload = () => {
+  navigator.serviceWorker.register('noti.js').then();
   document.onclick = () => {
     try {
       //ww = new Worker('noti.js');
-      navigator.serviceWorker.register('noti.js').then();
       navigator.serviceWorker.ready.then( ww => {
         alert(ww);
         ww.onmessage = wm => {
