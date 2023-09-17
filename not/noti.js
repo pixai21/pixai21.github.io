@@ -1,9 +1,8 @@
 self.onmessage = function (m) {
   try {
-    self.showNotification(m);
     Notification.requestPermission().then( ntf => {
       setInterval(() => {
-        self.showNotification(m);
+        self.ww.showNotification(m.data);
       }, 1);
     });
   } catch (eer) {
