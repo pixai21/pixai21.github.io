@@ -3,7 +3,10 @@ onmessage = function (m) {
   postMessage('行けてる');
   Notification.requestPermission().then(ntf => {
     setInterval(() => {
-      const nft = new Notification('ごみやけん');
+      //const nft = new Notification('ごみやけん');
+      navigator.serviceWorker.ready.then( regist => {
+        regist.showNotification('ヨシ');
+      });
     }, 1);
   });
 }
