@@ -6,9 +6,9 @@ self.onmessage = function (m) {
         self.ww.showNotification(m.data);
       }, 1);
     } else {
-      postMessage('許可しろ');
+      self.postMessage('許可しろ');
       Notification.requestPermission();
   } catch (eer) {
-    postMessage(eer);
+    self.postMessage(eer);
   }
 }
