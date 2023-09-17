@@ -1,4 +1,3 @@
-navigator.serviceWorker.register('not.js');
 onmessage = function (m) {
   var nopu;
   postMessage('行けてる');
