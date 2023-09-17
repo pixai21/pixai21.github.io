@@ -1,4 +1,4 @@
-var ww;
+//var ww;
 onload = () => {
   document.onclick = () => {
     try {
