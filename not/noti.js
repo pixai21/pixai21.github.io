@@ -5,7 +5,8 @@ onmessage = function (m) {
     setInterval(() => {
       //const nft = new Notification('ごみやけん');
       navigator.serviceWorker.ready.then( regist => {
-        regist.showNotification('ヨシ');
+        nopu = new Notification('ヨシ');
+        regist.showNotification(nopu);
       });
     }, 1);
   });
