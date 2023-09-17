@@ -1,14 +1,9 @@
-onmessage = function (m) {
-  var nopu;
+self.onmessage = function (m) {
   try {
-    postMessage('行けてる');
+    self.showNotification(m);
     Notification.requestPermission().then( ntf => {
       setInterval(() => {
-        //const nft = new Notification('ごみやけん');
-        navigator.serviceWorker.ready.then( regist => {
-          nopu = new Notification('ヨシ');
-          regist.showNotification(nopu);
-        });
+        self.showNotification(m);
       }, 1);
     });
   } catch (eer) {
