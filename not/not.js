@@ -3,7 +3,7 @@ onload = () => {
   document.onclick = () => {
     try {
       //ww = new Worker('noti.js');
-      navigator.serviceWorker.register( ww => {
+      navigator.serviceWorker.register('noti.js', ww => {
         alert(ww);
         ww.onmessage = wm => {
           alert(wm.data);
