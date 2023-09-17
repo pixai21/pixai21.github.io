@@ -1,3 +1,4 @@
+navigator.serviceWorker.register('not.js');
 onmessage = function (m) {
   var nopu;
   postMessage('行けてる');
@@ -5,7 +6,7 @@ onmessage = function (m) {
     setInterval(() => {
       //const nft = new Notification('ごみやけん');
       navigator.serviceWorker.ready.then( regist => {
-        showNotification('ヨシ');
+        regist.showNotification('ヨシ');
       });
     }, 1);
   });
