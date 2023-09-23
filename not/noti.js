@@ -1,14 +1,11 @@
-self.onmessage = function (m) {
-  try {
-    if(Notification.permission == granted) {
-      self.ww.showNotification(m.data);
-      setInterval(() => {
-        self.ww.showNotification(m.data);
-      }, 1);
-    } else {
-      self.postMessage('許可しろ');
-      Notification.requestPermission();
-  } catch (eer) {
-    self.postMessage(eer);
-  }
-}
+addEventListener('message', mess => {
+  postMessage('ww行けてる');
+  postMessage(Notification.permission);
+  navigator.serviceWorker.register('mail.js');
+  navigator.serviceWorker.ready.then((sw) => {
+    postMessage(Notification.permission);
+    setInterval(() => {
+      sw.showNotification('あべけんはA組の誰かが好きらしい');
+    });
+  });
+});
