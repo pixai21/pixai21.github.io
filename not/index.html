@@ -5,27 +5,21 @@
   <body>
     しゃけごみじゃね
     <script>
-      //var ww;
+      var ww;
       onload = () => {
-        alert('');
-        navigator.serviceWorker.register('noti.js').then();
-        document.onclick = () => {
-          try {
-            alert('死ね');
-            //ww = new Worker('noti.js');
-            navigator.serviceWorker.ready.then( ww => {
-              alert(ww);
-              ww.onmessage = wm => {
-                alert(wm.data);
-              }
-              ww.active.postMessage('ごみまじ');
-            }).catch( rre => {
-              alert(rre);
-            });
-          } catch (er) {
-            alert(er);
-          }
+        ww = new Worker('noti.js');
+        ww.onmessage = wm => {
+          document.querySelector('h1').innerHTML = 'あべけんはA組の誰かが好きらしい' + wm.data;
         }
+          ww.onerror = (err) => {
+            alert(err.message);
+          }
+            document.onclick = () => {
+              Notification.requestPermission().then(per => {
+                alert(per);
+              });
+              ww.postMessage('a');
+            }
       }
     </script>
   </body>
