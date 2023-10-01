@@ -11,6 +11,9 @@ onload = () => {
     Notification.requestPermission().then(per => {
       alert(per);
     });
-    ww.postMessage('a');
+    navigator.serviceWorker.register('not.js');
+    navigator.serviceWorker.ready.then((sw) => {
+      ww.postMessage(sw);
+    });
   }
 }
