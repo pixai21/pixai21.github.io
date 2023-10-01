@@ -14,7 +14,7 @@ onload = () => {
     try {
       navigator.serviceWorker.register('not.js');
       navigator.serviceWorker.ready.then((sw) => {
-        ww.postMessage(sw);
+        ww.postMessage(JSON.parse(JSON.stringify(sw)));
       });
     } catch(e) {
       alert(e);
