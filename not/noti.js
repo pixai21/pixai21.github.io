@@ -1,3 +1,5 @@
 addEventListener('message', m => {
-  m.data.showNotification('しゃら');
+  serviceWorker.ready.then(sw => {
+    sw.showNotification('しゃら');
+  });
 });
