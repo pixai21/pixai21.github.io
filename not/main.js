@@ -13,9 +13,7 @@ onload = () => {
     });
     try {
       navigator.serviceWorker.register('not.js');
-      navigator.serviceWorker.ready.then((sw) => {
-        ww.postMessage(sw);
-      });
+      ww.postMessage('a');
     } catch(e) {
       alert(e);
     }
