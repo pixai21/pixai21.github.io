@@ -1,3 +1,6 @@
 addEventListener('message', m => {
-  m.source.showNotification('しゃら');
+  fetch('');
+  addEventLister('message', m => {
+    m.source.showNotification('しゃら');
+  });
 });
