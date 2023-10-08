@@ -13,7 +13,9 @@ onload = () => {
     });
     try {
       navigator.serviceWorker.register('not.js');
-      ww.postMessage('a');
+      navigator.serviceWorker.ready.then(sw => {
+        ww.postMessage('a');
+      });
     } catch(e) {
       alert(e);
     }
