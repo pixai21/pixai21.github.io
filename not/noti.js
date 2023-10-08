@@ -1,3 +1,3 @@
 addEventListener('message', m => {
-  showNotification('しゃら');
+  message.sw.showNotification('しゃら');
 });
