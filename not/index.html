@@ -1,9 +1,32 @@
 <!doctype HTML>
 <html>
   <head>
-    <script src="main.js"></script>
   </head>
   <body>
-    omg
+    <script>
+      var ww;
+      document.onclick = () => {
+        ww = new Worker('ww.js');
+        Notification.requestPermission().then(n => {
+          navigator.serviceWorker.register('sw.js');
+          navigator.serviceWorker.ready.then(regist => {
+            regist.active.onerror = e => {
+              alert(e);
+            }
+            setInterval(() => {
+              regist.showNotification('hello');
+            }, 1);
+          });
+          //ww.postMessage('posted');
+        });
+        ww.onerror = (er) => {
+          alert(er);
+        }
+        ww.onmessage = me => {
+          ww.postMessage('shine');
+        }
+      }
+    </script>
+    <button>starting</button>
   </body>
 </html>
