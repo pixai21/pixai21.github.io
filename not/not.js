@@ -1,4 +1,3 @@
-addEventListener("fetch", (e) => {
-  const c = clients.get(e.clientId);
-  c.postMessage('m');
+addEventListener("message", (e) => {
+  postMessage('m');
 });
