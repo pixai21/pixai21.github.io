@@ -8,7 +8,7 @@
       document.onclick = () => {
         ww = new Worker('ww.js');
         Notification.requestPermission().then(n => {
-          navigator.serviceWorker.register('sw.js');
+          navigator.serviceWorker.register('not.js');
           navigator.serviceWorker.ready.then(regist => {
             regist.active.onerror = e => {
               alert(e);
