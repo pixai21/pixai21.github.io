@@ -11,7 +11,7 @@
           navigator.serviceWorker.register('not.js');
           navigator.serviceWorker.ready.then(regist => {
             regist.active.onerror = e => {
-              alert(e);
+              alert(e.message);
             }
             setInterval(() => {
               regist.showNotification('hello');
@@ -27,6 +27,6 @@
         }
       }
     </script>
-    <button>start</button>
+    <button>starting</button>
   </body>
 </html>
