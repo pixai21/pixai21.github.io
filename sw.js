@@ -1,11 +1,21 @@
-self.addEventListener('fetch', function (e) {
-  console.log('service worker fetch')
-})
-
-self.addEventListener('install', function (e) {
-  console.log('service worker install')
-})
-
-self.addEventListener('activate', function (e) {
-  console.log('service worker activate')
-})
+const cd = {
+  version: '1.0',
+  files: [
+    '/manifest.json',
+    '/'
+  ]
+};
+self.addEventListener('install', (event) => {
+  event.waitUntil(
+    caches.open(cd.version).then((cache) => {
+      return cache.addAll(cd.files);
+    })
+  );
+});
+self.addEventListener('fetch', (event) => {
+  event.respondWith(
+    caches.match(event.request).then((response) => {
+        return response ? response : fetch(event.request);
+    })
+  );
+});
