@@ -1,8 +1,8 @@
 {
-    "short_name": "てすと",
-    "name": "てすと",
+    "short_name": "Free",
+    "name": "Free",
     "display": "standalone",
-    "start_url": "not/index.html",
+    "start_url": "/",
     "icons": [
         {
             "src": "https://abekenman.github.io/Abekenman.webp",
