@@ -1,13 +1,19 @@
-<!doctype HTML>
 <html>
-  <head>
-    <link rel="manifest" href="manifest.json">
-    <script>      
-      if (navigator.serviceWorker) {
-        navigator.serviceWorker.register ('sw.js')
-      }
-    </script>
-  </head>
-  <body>
-  </body>
+<head>
+<script>
+try {
+navigator.serviceWorker.register("/sw.js");
+onload = () => document.querySelector("button").onclick = () => {
+  eval(document.querySelector("input").value);
+};
+} catch(e) {
+  alert(e);
+}
+</script>
+<link rel="manifest" href="/manifest.json">
+</head>
+<body>
+<input>
+<button>開始、</button>
+</body>
 </html>
