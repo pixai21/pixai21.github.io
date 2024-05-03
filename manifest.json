@@ -5,9 +5,9 @@
     "start_url": "/",
     "icons": [
         {
-            "src": "https://abekenman.github.io/Abekenman.webp",
+            "src": "https://abekenman.github.io/Abekenman.svg",
             "sizes": "192x192",
-            "type": "image/png"
+            "type": "image/svg"
         }
     ]
 }
